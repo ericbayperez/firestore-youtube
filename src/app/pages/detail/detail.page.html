@@ -1,9 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>detail</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{ (video | async)?.videoTitle }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <h3> Creator </h3>
+    <p>
+      {{ (video | async)?.videoCreator }}
+    </p>
+  
+    <h3> Description </h3>
+    <p>
+      {{ (video | async)?.videoDescription }}
+    </p>
+  
+    <h3> Link </h3>
+    <p>
+      {{ (video | async)?.videoLink }}
+    </p>
 
-<ion-content padding>
+    <ion-button expand="block" (click)="deleteVideo()">
+        DELETE Video
+    </ion-button>
 
-</ion-content>
+  </ion-content>

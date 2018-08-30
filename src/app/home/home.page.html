@@ -10,6 +10,8 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <ion-card *ngFor="let video of videoList | async" routerLink="/detail/{{video.id}}">
+    <ion-card-header>{{video.videoTitle}}</ion-card-header>
+    <ion-card-content>Creator: {{video.videoCreator}}</ion-card-content>
+  </ion-card>
 </ion-content>
