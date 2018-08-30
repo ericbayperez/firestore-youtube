@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Video</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="createVideoForm" (submit)="addVideo()">
+        <ion-item>
+          <ion-label stacked>Title</ion-label>
+          <ion-input formControlName="videoTitle" type="text" placeholder="What's this video titled?">
+          </ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label stacked>Creator</ion-label>
+          <ion-input formControlName="videoCreator" type="text" placeholder="Who created this video?">
+          </ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label stacked>Description</ion-label>
+          <ion-textarea formControlName="videoDescription" type="text" placeholder="What's this video about?">
+          </ion-textarea>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label stacked>Link</ion-label>
+          <ion-input formControlName="videoLink" type="text" placeholder="Where's this video located?">
+          </ion-input>
+        </ion-item>
+    
+    
+        <ion-button expand="block" type="submit" [disabled]="!createVideoForm.valid">
+          Add Video
+        </ion-button>
+      </form>
+</ion-content>
